@@ -43,6 +43,7 @@ jobs:
 
       - name: Commit and push changes to repo
         run: |
+          cd "${GITHUB_WORKSPACE}/${{ env.TARGET_DEVOPS_DIR }}"
           git config user.email "actions@github.com"
           git config user.name "Stake DAO Automation"
           git add .
