@@ -2,14 +2,12 @@ name: Fetch lockers data
 
 on:
   workflow_dispatch: # Allows the workflow to be triggered manually
-  schedule:
-    - cron: '0 */2 * * *'
 
 env:
   DEVOPS_DIR: devops
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the main repo
@@ -31,7 +29,7 @@ jobs:
         run: |
           cp "${{ env.DEVOPS_DIR }}/data.json" "${GITHUB_WORKSPACE}/data.json"
 
-      - name: Commit and push changes to bribes repo
+      - name: Commit and push changes to repo
         run: |
           git config user.email "actions@github.com"
           git config user.name "Stake DAO Automation"
