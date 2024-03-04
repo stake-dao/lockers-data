@@ -18,11 +18,15 @@ jobs:
           path: ${{ env.DEVOPS_DIR }}
           ref: features/staking-rewards-lockers
 
-      - run: |
+      - name: Run script
+        id: reports_script
+        run: |
+          cd ${{ env.DEVOPS_DIR }}
           npm install
-      - run: |
           npm run buildLockers
+        shell: bash
         env:
+          PYTHONPATH: script/
           GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
           
       - name: Copy CSV to target repo
