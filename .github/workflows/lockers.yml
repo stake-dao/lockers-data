@@ -47,8 +47,7 @@ jobs:
           git config user.name "Stake DAO Automation"
           git add .
           git commit -m "Lockers"
-          git pull --rebase
-          git push origin main
+          git push
         shell: bash
         if: always()
       
