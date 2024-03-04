@@ -39,7 +39,7 @@ jobs:
           
       - name: Copy CSV to target repo
         run: |
-          cp "${{ env.DEVOPS_DIR }}/data.json" "${GITHUB_WORKSPACE}/data.json"
+          cp "${{ env.DEVOPS_DIR }}/data.json" "${GITHUB_WORKSPACE}//${{ env.TARGET_DEVOPS_DIR }}/data.json"
 
       - name: Commit and push changes to repo
         run: |
