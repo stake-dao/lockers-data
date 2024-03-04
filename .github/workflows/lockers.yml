@@ -2,6 +2,8 @@ name: Fetch lockers data
 
 on:
   workflow_dispatch: # Allows the workflow to be triggered manually
+  schedule:
+    - cron: '0 */2 * * *' # Every 2 hours
 
 env:
   DEVOPS_DIR: devops
