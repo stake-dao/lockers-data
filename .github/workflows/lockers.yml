@@ -6,6 +6,7 @@ on:
 env:
   DEVOPS_DIR: devops
   TARGET_DEVOPS_DIR: target-devops
+  AGNOSTIC_KEY: ${{ secrets.AGNOSTIC_KEY }}
 
 jobs:
   build:
