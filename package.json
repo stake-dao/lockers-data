@@ -1,0 +1,8 @@
+{
+  "name": "lockers-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stake-dao/lockers-data.git",
+  "author": "Marsot Pierre <pierre.mmarsot@gmail.com>",
+  "license": "MIT"
+}
