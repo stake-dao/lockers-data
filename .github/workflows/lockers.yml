@@ -5,6 +5,7 @@ on:
 
 env:
   DEVOPS_DIR: devops
+  TARGET_DEVOPS_DIR: target-devops
 
 jobs:
   build:
@@ -26,8 +27,15 @@ jobs:
           npm run buildLockers
         shell: bash
         env:
-          PYTHONPATH: script/
           GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: stake-dao/lockers-data
+          token: ${{ secrets.GIT_ACCESS_TOKEN }}
+          path: ${{ env.TARGET_DEVOPS_DIR }}
+        if: always()
           
       - name: Copy CSV to target repo
         run: |
